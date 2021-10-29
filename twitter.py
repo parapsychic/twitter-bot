@@ -1,3 +1,9 @@
+### TO DO ###
+# [ ] Day specific retweet routine
+# [ ] Adding user to blocklist by username and then converting to id and storing it in blocked users
+# [ ] Front end
+
+
 import tweepy
 import time
 import random
@@ -69,7 +75,7 @@ def isBlockedUser(tweet):
         refTweet = client.get_tweet(id=tweet.referenced_tweets[0].id, expansions='author_id')[0]
         refAuthor = refTweet.author_id
         if checkBlock(refAuthor):
-            return(true)
+            return(True)
 
 
     return checkBlock(author)
